@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listitem',
@@ -11,7 +12,7 @@ export class ListitemComponent implements OnInit {
     // {id: 1, descricao:"RG", n2:"Caixa", n3: "Armario"}
   ]
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
     // let lista = [{id: 1, descricao:"RG", n2:"Caixa", n3: "Armario"}]
@@ -22,6 +23,10 @@ export class ListitemComponent implements OnInit {
   getItens() {
     this.listItens = JSON.parse(localStorage.getItem('lista')) ;
     
+  }
+
+  irNovo(){
+    this.router.navigate(['/pages/caditem'])
   }
 
 }

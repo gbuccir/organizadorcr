@@ -2,6 +2,7 @@
   <ion-header>
     <h5>O que gostaria de encontrar?</h5>
     <ion-searchbar showCancelButton="focus"></ion-searchbar>
+    <ion-button (click)="irNovo()" >Novo</ion-button>
   </ion-header>
   <ion-card *ngFor="let item of listItens">
     <h4>{{item.itemGuardado}}</h4>
