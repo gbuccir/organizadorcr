@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaditemComponent implements OnInit {
 
-  itemGuardado = "";
-  itemGuardadoLocal = "";
-  itemGuardadoLocalMaster = "";
+  public itemGuardado = "";
+  public itemGuardadoLocal = "";
+  public itemGuardadoLocalMaster = "";
 
   listaSalva = []
   constructor() { }
