@@ -1,0 +1,29 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <ion-slides >
+    <ion-slide>
+      <div class="slide">
+        <!-- <img src="./slide-1.png" /> -->
+        <h2>O que gostaria de cadastrar?</h2>
+        <input type="text" [(ngModel)]="itemGuardado" />
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <!-- <img src="./slide-2.png" /> -->
+      <h2>Aonde esta {{itemGuardado}} ?</h2>
+      <input type="text" [(ngModel)]="itemGuardadoLocal" />
+    </ion-slide>
+
+    <ion-slide>
+      <!-- <img src="./slide-3.png" /> -->
+      <h2>Aonde fica {{itemGuardadoLocal}} ?</h2>
+      <input type="text" [(ngModel)]="itemGuardadoLocalMaster" />
+    </ion-slide>
+
+    <ion-slide>
+      <!-- <img src="./slide-4.png" /> -->
+      <h2>Gostaria de tirar foto?</h2>
+      <ion-button (click)="continuar()" fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

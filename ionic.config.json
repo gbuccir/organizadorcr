@@ -1,0 +1,7 @@
+{
+  "name": "organizador-cr",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

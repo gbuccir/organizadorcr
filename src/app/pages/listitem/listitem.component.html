@@ -1,0 +1,14 @@
+<ion-content>
+  <ion-header>
+    <h5>O que gostaria de encontrar?</h5>
+    <ion-searchbar showCancelButton="focus"></ion-searchbar>
+  </ion-header>
+  <ion-card *ngFor="let item of listItens">
+    <h4>{{item.itemGuardado}}</h4>
+    <span>{{item.itemGuardadoLocal}}</span>
+    <br/>
+    <span>{{item.itemGuardadoLocalMaster}}</span>
+
+  </ion-card>
+
+</ion-content>
