@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
+import { ListitemComponent } from '../listitem/listitem.component';
 
 @Component({
   selector: 'app-caditem',
@@ -11,7 +13,11 @@ export class CaditemComponent implements OnInit {
   itemGuardadoLocal = "";
   itemGuardadoLocalMaster = "";
 
-  listaSalva = []
+  listaSalva = [];
+
+  @ViewChild('cadSlider') slider: IonSlides;
+  currentIndex:number=0;
+
   constructor() { }
 
   ngOnInit() {
@@ -20,15 +26,24 @@ export class CaditemComponent implements OnInit {
     this.listaSalva = [...itemlista];
   }
 
+  getSlideIndex(){
+    this.slider.getActiveIndex().then(
+      (index)=>{
+        this.currentIndex = index;
+     });
+   }
+
   continuar(){
-    const lista = [
+    let listItens = JSON.parse(localStorage.getItem('lista')) ;
+    let lista = [
       {
         id: this.listaSalva.length+1, 
         itemGuardado: this.itemGuardado, 
         itemGuardadoLocal:this.itemGuardadoLocal, 
         itemGuardadoLocalMaster: this.itemGuardadoLocalMaster
       }
-    ]
+    ];
+    lista.push(listItens);
     localStorage.setItem('lista', JSON.stringify(lista))
   }
 }

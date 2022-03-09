@@ -1,23 +1,23 @@
 <ion-content fullscreen class="ion-padding" scroll-y="false">
-  <ion-slides >
+  <ion-slides #cadSlider (ionSlideTap)="getIndex()">
     <ion-slide>
       <div class="slide">
         <!-- <img src="./slide-1.png" /> -->
         <h2>O que gostaria de cadastrar?</h2>
-        <input type="text" [(ngModel)]="itemGuardado" />
+        <input [disabled]="currentIndex != 0" type="text" [(ngModel)]="itemGuardado" />
       </div>
     </ion-slide>
 
     <ion-slide>
       <!-- <img src="./slide-2.png" /> -->
       <h2>Aonde esta {{itemGuardado}} ?</h2>
-      <input type="text" [(ngModel)]="itemGuardadoLocal" />
+      <input type="text" [(ngModel)]="itemGuardadoLocal" [disabled]="currentIndex != 1"/>
     </ion-slide>
 
     <ion-slide>
       <!-- <img src="./slide-3.png" /> -->
       <h2>Aonde fica {{itemGuardadoLocal}} ?</h2>
-      <input type="text" [(ngModel)]="itemGuardadoLocalMaster" />
+      <input type="text" [(ngModel)]="itemGuardadoLocalMaster" [disabled]="currentIndex != 2"/>
     </ion-slide>
 
     <ion-slide>
